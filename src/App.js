@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AppHeader from './header/AppHeader'
+import Navigation from './navigation/Navigation'
+import AppBanner from './banner/AppBanner'
+import AppMenu from './menu/AppMenu'
+import AppBottom from './bottom/AppBottom'
+
+const styles = {
+  app: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'stretch'
+  }
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={styles.app}>
+      <AppHeader />
+      <Navigation />
+      <AppBanner />
+      <AppMenu />
+      <AppBottom />
     </div>
   );
 }
