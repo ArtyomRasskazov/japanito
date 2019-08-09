@@ -1,11 +1,15 @@
 import React from 'react'
 import logo from '../icons/logo.png'
 
+let widthContent = (document.documentElement.clientWidth-1024) / 2;
+
 const styles = {
   navigation: {
     // width: 1024,
     padding: '35px 0px',
-    background: `left no-repeat url(${logo})`
+    background: `left no-repeat url(${logo})`,
+    paddingLeft: widthContent,
+    paddingRight: widthContent
   },
   navigationMenu: {
     display: 'flex',
@@ -23,14 +27,14 @@ const styles = {
 function Navigation() {
   return (
     <nav style={styles.navigation}>
-      <ui style={styles.navigationMenu}>
+      <ul style={styles.navigationMenu}>
         <li style={styles.navigationItem}>Главная</li>
         <li style={styles.navigationItem}>Меню</li>
         <li style={styles.navigationItem}>Новости</li>
         <li style={styles.navigationItem}>Акции</li>
         <li style={styles.navigationItem}>Рестораны</li>
         <li style={styles.navigationItem}>География доставки</li>
-      </ui>
+      </ul>
     </nav>   
   )
 }

@@ -3,12 +3,16 @@ import ContactsBottom from './ContactsBottom'
 import MenuBottom from './MenuBottom'
 import FormsBottom from './FormsBottom'
 
+let widthContent = (document.documentElement.clientWidth-1024) / 2;
+
 const styles = {
   appBottom: {
     display: 'inline-flex',
     justifyContent: 'space-between',
     // width: 1024,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    paddingLeft: widthContent,
+    paddingRight: widthContent
   }
 }
 
