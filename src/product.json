@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "type": "roll",
     "name": "Филадельфия",
     "description": "c лососем",
@@ -9,6 +10,7 @@
     "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AADtZYTDp8dQbPaidf1Xp2eta/Roll_Philadelphiya.jpg"
   }
   ,{
+    "id": "2",
     "type": "roll",
     "name": "Сяке ролл",
     "description": "c лососем",
@@ -18,6 +20,7 @@
     "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AAAiUCBbHzA7j-imlJ-PcaMQa/Roll_Syake.jpg"
   }
   ,{
+    "id": "3",
     "type": "roll",
     "name": "Тэкка ролл",
     "description": "c тунцом",
@@ -27,6 +30,7 @@
     "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AAAxKXxIHnufTX3wC5lEocAua/Roll_Tekka.jpg"
   }
   ,{
+    "id": "4",
     "type": "roll",
     "name": "Унаги ролл",
     "description": "c угрём",
@@ -36,6 +40,7 @@
     "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AAA0qXbQoPSPRbHK8c9QtHjea/Roll_Unagi.jpg"
   }
   ,{
+    "id": "5",
     "type": "roll",
     "name": "Яки хамачи",
     "description": "c жареным желтохвостиком",
@@ -45,6 +50,7 @@
     "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AABVAg-dTyewzJsFwGTSm6zca/Roll_Talat.jpg"
   }
   ,{
+    "id": "6",
     "type": "sushi",
     "name": "Сякэ",
     "description": "c лососем",
@@ -54,6 +60,7 @@
     "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AABrfoBIcZaYJkVMCil5IFxea/Sushi_Syake_Kunsei.jpg"
   }
   ,{
+    "id": "7",
     "type": "sushi",
     "name": "Унаги",
     "description": "c копчёным угрём",
@@ -63,6 +70,7 @@
     "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AACLrIQ-tG8llBp_mZP_MQq3a/Sushi_Unagi.jpg"
   }
   ,{
+    "id": "8",
     "type": "sushi",
     "name": "Магуро",
     "description": "c тунцом",
@@ -72,6 +80,7 @@
     "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AAAzpQOemC00nsZ56Litoj41a/Sushi_Maguro.jpg"
   }
   ,{
+    "id": "9",
     "type": "sushi",
     "name": "Эби",
     "description": "c креветкой",
@@ -81,6 +90,7 @@
     "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AADsY65fMMUT-SGLZ2oQR8nza/Sushi_Ebi.jpg"
   }
   ,{
+    "id": "10",
     "type": "sushi",
     "name": "Абокадо",
     "description": "c авокадо",

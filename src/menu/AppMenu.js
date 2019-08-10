@@ -14,10 +14,11 @@ const styles = {
   }
 }
 
-function AppMenu() {
+function AppMenu(props) {
   return (
+
     <div style={styles.appMenu}>
-      <ProductList />
+      <ProductList  orderList={props.orderList}/>
     </div>
   );
 }

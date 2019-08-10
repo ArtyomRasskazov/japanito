@@ -9,10 +9,10 @@ const styles = {
   }
 }
 
-function PersonalAccountButton() {
+function PersonalAccountButton(props) {
   return (
     <div style={styles.personalAccountButton}>
-      Александр
+      {props.userName} &nbsp; &nbsp;
       <i className="fa fa-user" />
     </div>
   )

@@ -11,17 +11,27 @@ const styles = {
   }
 }
 
+class ProductList extends React.Component {
+  constructor(props) {
+    super(props);
 
-function ProductList() {
-  return (
-    <div style={styles.productList}>
-      {productData.map(element => { 
-        return (
-          <ProductCard product={element}/>
-        )
-      })}
-    </div>
-  );
+    this.state = {
+      //
+    };
+  }
+
+  render(props) {
+    
+    return (
+      <div style={styles.productList}>
+        {productData.map(element => {
+          return (
+            <ProductCard product={element} key={element.id} orderList={this.props.orderList}/>
+          )
+        })}
+      </div>
+    );
+  }
 }
 
 export default ProductList;

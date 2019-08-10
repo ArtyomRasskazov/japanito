@@ -12,21 +12,20 @@ const styles = {
     display: 'inline-flex',
     justifyContent: 'space-between',
     height: 40,
-    // width: 1024,
     backgroundColor: 'white',
     paddingLeft: widthContent,
     paddingRight: widthContent
   }
 }
 
-function AppHeader() {
+function AppHeader(props) {
   return (
     <div style={styles.appHeader}>
       <ChangeLanguage />
       <SelectCity />
       <PhoneNumber />
-      <PersonalAccountButton />
-      <CartButton />
+      <PersonalAccountButton userName={props.userName}/>
+      <CartButton totalCost={props.totalCost}/>
     </div>
   )
 }

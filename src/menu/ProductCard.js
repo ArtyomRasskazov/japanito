@@ -1,6 +1,5 @@
 import React from 'react';
 import 'font-awesome/css/font-awesome.min.css'
-import Counter from './Counter'
 
 const styles = {
   productCard: {
@@ -34,43 +33,86 @@ const styles = {
   },
   productDescription: {
     margin: 0
+  },
+  counter: {
+    display: 'inline-flex'
   }
 }
 
-function ProductCard(props) {
-  let marker = (props.product.mark === "Hit") ? styles.productMarkerHit :
-               (props.product.mark === "Veg") ? styles.productMarkerVeg :
-                styles.productMarkerNone;
+class ProductCard extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <div style={styles.productCard}>
-      <div className="productWeight">
-        {props.product.weight} г.
-       
-        <div className="productMarker" style={marker}>
-          {props.product.mark}
+    this.state = {
+      id: this.props.product.id,
+      count: 0
+    };
+  }
+
+
+
+  addOne() {
+    if (this.state.count < 12) {
+      this.setState({
+        count: this.state.count + 1
+      })
+
+      this.orderSet()
+    }
+  }
+
+  delOne() {
+    if (this.state.count > 0) {
+      this.setState({
+        count: this.state.count - 1
+      })
+    }
+
+    this.orderSet()
+  }
+
+  render(props) {
+    console.log(this.props.orderList);
+    let marker = (this.props.product.mark === "Hit") ? styles.productMarkerHit :
+                 (this.props.product.mark === "Veg") ? styles.productMarkerVeg :
+                  styles.productMarkerNone;
+
+    return (
+      <div style={styles.productCard}>
+        <div className="productWeight">
+
+          {this.props.product.weight} г.
+
+          <div className="productMarker" style={marker}>
+            {this.props.product.mark}
+          </div>
+        </div>
+
+        <div className="productPhoto" style={styles.productPhoto}>
+          <img src={this.props.product.photo} alt={this.props.product.name}/>
+        </div>
+
+        <div className="productAbout">
+          <h1 className="productName" style={styles.productName}>{this.props.product.name}</h1>
+          <p className="productDescription" style={styles.productDescription}>{this.props.product.description}</p>
+        </div>
+
+        <div className="productNumber" style={styles.productNumber}>
+          <div className="productPrise">
+            {this.props.product.prise}
+            &nbsp;
+            <i className="fa fa-rub" />
+          </div>
+
+          <div className="counter" style={styles.counter}>
+            <button className="counterDecrement" onClick={() => this.delOne()}>-</button>
+            <p className="countValue">{this.state.count}</p>
+            <button className="counterIncrement" onClick={() => this.addOne()}>+</button>
+          </div>
         </div>
       </div>
-
-      <div className="productPhoto" style={styles.productPhoto}>
-        <img src={props.product.photo} alt={props.product.name}/>
-      </div>
-
-      <div className="productAbout">
-        <h1 className="productName" style={styles.productName}>{props.product.name}</h1>
-        <p className="productDescription" style={styles.productDescription}>{props.product.description}</p>
-      </div>
-
-      <div className="productNumber" style={styles.productNumber}>
-        <div className="productPrise">
-          {props.product.prise}
-          &nbsp;
-          <i className="fa fa-rub" />
-        </div>
-        <Counter />
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default ProductCard;

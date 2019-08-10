@@ -9,11 +9,18 @@ const styles = {
   }
 }
 
-function CartButton() {
+function CartButton(props) {
+  let cost = props.totalCost;
+
+  // add space between thousands and hundreds
+  if (cost >= 1000) {
+      cost = (cost - cost%1000) / 1000 + '\xa0' + cost%1000;
+  }
+
   return (
     <div style={styles.cartButton}>
-      2500
-      <i className="fa fa-rub" />
+      {cost} &nbsp;
+      <i className="fa fa-rub" /> &nbsp; &nbsp;
       <i className="fa fa-shopping-bag" />
     </div>
   )
