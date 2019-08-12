@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+
   background: top / contain no-repeat url('./images/pille-riin.jpg');
 }
 
@@ -28,4 +29,91 @@ h2 {
   font-family: 'Stalinist One', cursive;
   font-size: 16px;
   color: #fd1c44;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: white;
+}
+
+ul.ProductsByCategories{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+ul.ListOfProducts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+ul.ListOfProducts div.ProductCard {
+  width: 160px;
+  background: top no-repeat;
+}
+
+ul.ListOfCategories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  height: 120px;
+}
+
+ul.ListOfCategories li {
+  background: center / 40% no-repeat ;
+  text-align: center;
+  height: 120px;
+  width: 180px
+}
+
+ul.ListOfCategories li:hover {
+  height: 130px;
+  background-color: red;
+}
+
+ul.ListOfCategories a {
+  color: white;
+  text-decoration: none;
+}
+
+div.Header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 40px;
+}
+
+div.Header input[type="radio"] {
+  display: none;
+}
+
+div.Header input[checked] + label {
+  color: red
+}
+
+div.Header select[name="cutySelector"] {
+  background: white;
+}
+
+div.Header button {
+  border: none;
+}
+
+div.Header button[name="userName"] {
+  background: white;
+}
+
+div.Header button[name="openOrder"] {
+  background: red;
 }

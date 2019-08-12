@@ -21,11 +21,11 @@ class ProductCard extends React.Component {
       <form className="counter">
         <input type="button" value={"-"}
                onClick={() => (this.toOrder('dec'))}
-               disabled={!(this.props.value > 0)}/>
+               disabled={!(this.props.value > 0)}/>  {/* .value may be undefined! */}
         <input type="text" value={this.props.value || 0} readOnly/>
         <input type="button" value={"+"}
                onClick={() => (this.toOrder('ink'))}
-               disabled={this.props.value >= this.props.maxValue}/>
+               disabled={this.props.value >= this.props.maxValue}/>  {/* .value may be undefined! */}
       </form>
     )
   }
