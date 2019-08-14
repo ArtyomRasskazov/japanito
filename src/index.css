@@ -44,11 +44,22 @@ ul {
   background-color: white;
 }
 
-ul.ProductsByCategories{
+ul.ProductsByCategories {
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
+
+ul.ProductsByCategories > li {
+  margin-top: 110px;
+  margin-bottom: 45px;
+}
+
+/* ul.ProductsByCategories::before,
+ul.ProductsByCategories::after {
+  content: '';
+  box-shadow: 0 0 16px rgba(0, 0, 0, .2);
+} */
 
 ul.ListOfProducts {
   display: flex;
@@ -68,6 +79,7 @@ ul.ListOfCategories {
   flex-wrap: nowrap;
   justify-content: space-between;
   height: 120px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, .1);
 }
 
 ul.ListOfCategories li {
@@ -88,10 +100,23 @@ ul.ListOfCategories a {
 }
 
 div.Header {
+  position: fixed;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: stretch;
   height: 40px;
+  width: 1012px;
+  background: white;
+}
+
+div.Header > form.region {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
 }
 
 div.Header input[type="radio"] {
@@ -102,18 +127,69 @@ div.Header input[checked] + label {
   color: red
 }
 
-div.Header select[name="cutySelector"] {
+div.Header button,
+div.Header select[name="citySelector"] {
+  border: none;
   background: white;
 }
 
 div.Header button {
-  border: none;
-}
-
-div.Header button[name="userName"] {
-  background: white;
+  width: 160px;
 }
 
 div.Header button[name="openOrder"] {
+  color: white;
   background: red;
+}
+
+/* ProductCard.js */
+
+.ProductCard {
+  display: grid;
+  grid-template-areas: "weight mark"
+                       "name name"
+                       "description description"
+                       "prise counter";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 30px 140px 50px 30px;
+}
+
+#ProductWeight {
+  grid-area: weight;
+}
+
+#ProductMark {
+  grid-area: mark;
+}
+
+#ProductName {
+  grid-area: name;
+}
+
+#ProductDescription {
+  grid-area: description;
+}
+
+
+#ProductPrise {
+  grid-area: prise;
+}
+
+
+#ProductValue {
+  grid-area: counter;
+}
+
+.counter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.counter > input{
+  width: 33%;
+  border: none;
+  background: white;
+  text-align: center;
 }

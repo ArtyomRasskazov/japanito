@@ -18,7 +18,7 @@ class ProductCard extends React.Component {
 
   makeCounter() {
     return (
-      <form className="counter">
+      <form id="ProductValue" className="counter">
         <input type="button" value={"-"}
                onClick={() => (this.toOrder('dec'))}
                disabled={!(this.props.value > 0)}/>  {/* .value may be undefined! */}
@@ -36,11 +36,11 @@ class ProductCard extends React.Component {
     }
     return (
       <div className="ProductCard" style={photo}>
-        <div className="name"> {this.props.productData.name} </div>
-        <div className="description"> {this.props.productData.description} </div>
-        <div className="weight"> {this.props.productData.weight} </div>
-        <div className="prise"> {this.props.productData.prise} </div>
-        <div className="mark"> {this.props.productData.mark} </div>
+        <div id="ProductWeight" className="weight"> {this.props.productData.weight} </div>
+        <div id="ProductMark" className="mark"> {this.props.productData.mark} </div>
+        <div id="ProductName" className="name"> {this.props.productData.name} </div>
+        <div id="ProductDescription" className="description"> {this.props.productData.description} </div>
+        <div id="ProductPrise" className="prise"> {this.props.productData.prise} </div>
         {this.makeCounter()}
       </div>
     )
