@@ -25,12 +25,12 @@ function Header (props) {
       </form>
 
       <div>
-          <i className="fa fa-phone" />
+          <i className="fa fa-phone red" />
           &nbsp; {props.phoneNumber}
       </div>
 
       <button name="userName">{props.userName} &nbsp; &nbsp;
-          <i className="fa fa-user" />
+          <i className="fa fa-user red" />
       </button>
 
       <button name="openOrder">{cost} &nbsp;

@@ -56,14 +56,6 @@ class App extends React.Component {
     this.setState({orderList: orderList})
   }
 
-  makeOrder() {
-    return (
-      <ul className="Order">
-
-      </ul>
-    )
-  }
-
   makeCatalog() { //build list of products from productDataBase (sorted by categories)
     let productsByCategories = Object.keys(productDataBase).map(category => {
         let product = productDataBase[category].map(productData => {
@@ -115,19 +107,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App" style={styles.app}>
-        <Header lang={this.state.lang}
-                cities={this.state.cities}
-                phoneNumber={this.state.phoneNumber}
-                userName={this.state.userName}
-                totalCost={this.state.totalCost}/>
-
+      <div className="Card">
         {this.makeHeading()}
         {this.makeCatalog()}
-        {this.makeOrder()}
       </div>
     );
   }
 }
 
-export default App;
+export default Card;

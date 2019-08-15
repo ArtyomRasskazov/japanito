@@ -107,6 +107,7 @@ div.Header {
   justify-content: flex-end;
   align-items: stretch;
   height: 40px;
+  line-height: 40px;
   width: 1012px;
   background: white;
 }
@@ -164,6 +165,8 @@ div.Header button[name="openOrder"] {
 
 #ProductName {
   grid-area: name;
+  display: table-cell;
+  vertical-align: bottom;
 }
 
 #ProductDescription {
@@ -192,4 +195,8 @@ div.Header button[name="openOrder"] {
   border: none;
   background: white;
   text-align: center;
+}
+
+i.red {
+  color: red;
 }
