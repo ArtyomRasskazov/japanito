@@ -200,3 +200,7 @@ div.Header button[name="openOrder"] {
 i.red {
   color: red;
 }
+
+div.Order {
+  width: 300px;
+}

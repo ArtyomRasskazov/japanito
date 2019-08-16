@@ -57,10 +57,33 @@ class App extends React.Component {
   }
 
   makeOrder() {
-    return (
-      <ul className="Order">
+    let productsByCategories = Object.keys(productDataBase).map(category => {
+        let product = productDataBase[category].map(productData => {
+          if (this.state.orderList[productData.id] !== undefined) {
+            return (
+              <li key={productData.id}>
+                <ProductCard productData={productData}
+                    value={this.state.orderList[productData.id]}
+                    maxValue={this.state.maxValueForOrder}
+                    setOrder={this.setOrder}/>
+              </li>
+            )
+          } else {
+            return undefined;
+          }
+        })
 
-      </ul>
+        return (
+          <ul className="OrderList">
+            {product}
+          </ul>
+        )
+    })
+
+    return (
+      <div className="Order">
+        {productsByCategories}
+      </div>
     )
   }
 
@@ -120,7 +143,8 @@ class App extends React.Component {
                 cities={this.state.cities}
                 phoneNumber={this.state.phoneNumber}
                 userName={this.state.userName}
-                totalCost={this.state.totalCost}/>
+                totalCost={this.state.totalCost}
+                makeOrder={this.makeOrder}/>
 
         {this.makeHeading()}
         {this.makeCatalog()}
