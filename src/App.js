@@ -1,17 +1,25 @@
 import React from 'react';
 import ProductCard from './app/ProductCard'
 import Header from './app/Header'
+import Navigation from './app/Navigation'
 
 import productDataBase from './data/products.json'
 import productCategories from './data/categories.json'
 
+import sushi_main from './data/sushi_main.png'
 
 let space = (document.documentElement.clientWidth-1024) / 2;
+let root = document.querySelector(':root');
+root.style.setProperty('--padding', `${space}px`);
 
 const styles = {
   app: {
-    paddingLeft: space,
-    paddingRight: space,
+    // paddingLeft: space,
+    // paddingRight: space,
+  },
+  banner: {
+    paddingTop: '40px',
+    background: `content-box right bottom 25% no-repeat url(${sushi_main})`
   }
 }
 
@@ -25,6 +33,7 @@ class App extends React.Component {
       userName: 'Login',
       maxValueForOrder: 12,
       totalCost: 0,
+      orderVisibility: { visibility: 'visible' }, // visible / hidden
       orderList: {},
       phoneNumber: '8-800-900-500-5'
     };
@@ -81,7 +90,8 @@ class App extends React.Component {
     })
 
     return (
-      <div className="Order">
+      <div className="Order" style={this.state.orderVisibility}>
+        <h2>Ваш заказ</h2>
         {productsByCategories}
       </div>
     )
@@ -102,7 +112,10 @@ class App extends React.Component {
 
         return (
           //if key in productDataBase consist more than one word it crash?
-          <li key={category} id={category}> {category}
+          <li key={category} id={category}>
+            <h2>
+              {category}
+            </h2>
             <ul className="ListOfProducts">
               {product}
             </ul>
@@ -136,6 +149,17 @@ class App extends React.Component {
     )
   }
 
+  makeBanner() {
+    return (
+      <div className="Banner" style={styles.banner}>
+        <Navigation />
+        <h1>Бесплатная доставка при заказе</h1>
+        <h2>от 800 руб.</h2>
+        <button>Перейти к заказу</button>
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="App" style={styles.app}>
@@ -145,7 +169,7 @@ class App extends React.Component {
                 userName={this.state.userName}
                 totalCost={this.state.totalCost}
                 makeOrder={this.makeOrder}/>
-
+        {this.makeBanner()}
         {this.makeHeading()}
         {this.makeCatalog()}
         {this.makeOrder()}

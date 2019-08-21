@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=cyrillic');
 @import url('https://fonts.googleapis.com/css?family=Stalinist+One&display=swap&subset=cyrillic');
 
+:root {
+  --padding: 0px;
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -11,7 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
 
-  background: top / contain no-repeat url('./images/pille-riin.jpg');
+  background: top / 100% auto no-repeat fixed url('./images/pille-riin.jpg');
 }
 
 code {
@@ -41,6 +45,11 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+}
+
+.App > * {
+  padding-left: var(--padding);
+  padding-right: var(--padding);
   background-color: white;
 }
 
@@ -54,12 +63,6 @@ ul.ProductsByCategories > li {
   margin-top: 110px;
   margin-bottom: 45px;
 }
-
-/* ul.ProductsByCategories::before,
-ul.ProductsByCategories::after {
-  content: '';
-  box-shadow: 0 0 16px rgba(0, 0, 0, .2);
-} */
 
 ul.ListOfProducts {
   display: flex;
@@ -79,14 +82,14 @@ ul.ListOfCategories {
   flex-wrap: nowrap;
   justify-content: space-between;
   height: 120px;
-  box-shadow: 0 0 16px rgba(0, 0, 0, .1);
 }
 
 ul.ListOfCategories li {
   background: center / 40% no-repeat ;
   text-align: center;
   height: 120px;
-  width: 180px
+  width: 180px;
+  transition: all .2s ease-in;
 }
 
 ul.ListOfCategories li:hover {
@@ -199,8 +202,60 @@ div.Header button[name="openOrder"] {
 
 i.red {
   color: red;
+  font-size: 16px;
 }
 
 div.Order {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 300px;
+  padding: 47px 30px;
+}
+
+div.Banner button {
+  background: red;
+  color: white;
+  font-weight: 700;
+  border: none;
+  height: 40px;
+}
+
+button:hover, input[type="button"]:hover {
+  cursor: pointer;
+}
+
+nav.Navigation,
+nav.Navigation > ul  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav.Navigation > ul li {
+  margin: 35px 0px 35px 30px;
+}
+
+nav.Navigation > ul a {
+  color: black;
+  text-decoration: none;
+}
+
+nav.Navigation > ul a:active {
+  color: red;
+  text-decoration: none;
+}
+
+/* shadows */
+div.Order,
+div.Header,
+ul.ListOfCategories {
+  z-index: 10;
+  box-shadow: 0 0 16px rgba(0, 0, 0, .15);
+}
+
+div.Order,
+div.Header {
+  z-index: 20;
 }
