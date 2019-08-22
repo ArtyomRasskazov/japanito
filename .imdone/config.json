@@ -3,7 +3,7 @@
     "^(node_modules|bower_components|\\.imdone|target|build|dist|logs|flow-typed|imdone-export.json)[\\/\\\\]?|\\.(git|svn|hg|npmignore)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$"
   ],
   "watcher": true,
-  "keepEmptyPriority": true,
+  "keepEmptyPriority": false,
   "code": {
     "include_lists": [
       "TODO",
@@ -18,18 +18,21 @@
       "IDEA",
       "NOTE",
       "REVIEW",
-      "MARK",
       "HELP"
     ]
   },
   "lists": [
     {
       "name": "HELP",
+      "hidden": true
+    },
+    {
+      "name": "TODO",
       "hidden": false
     },
     {
-      "hidden": false,
-      "name": "DONE"
+      "name": "DOING",
+      "hidden": false
     }
   ],
   "marked": {
@@ -39,11 +42,5 @@
     "pedantic": false,
     "smartLists": true,
     "langPrefix": "language-"
-  },
-  "sync": {
-    "id": "5d5e2775907c04249b05a1bb",
-    "name": "ArtemRasskazov/japanito",
-    "useImdoneioForPriority": true
-  },
-  "noHelp": true
+  }
 }
