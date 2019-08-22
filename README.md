@@ -1,3 +1,5 @@
+[![TODO board](https://imdone.io/api/1.0/projects/5d5e2775907c04249b05a1bb/badge)](https://imdone.io/app#/board/ArtemRasskazov/japanito)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
