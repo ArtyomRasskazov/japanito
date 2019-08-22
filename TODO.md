@@ -1,4 +1,4 @@
-#DONE:0 **Create the footer**
+#DONE: **Create the footer** id:13
 - [x] Create flexbox
 - [x] Paste Logo component
 - [x] Create component: PhoneNumber (can replace it into Header)
@@ -9,21 +9,21 @@
 - [x] Create component: Comment
 - [x] Create component: Download Apps
 
-#IDEA: Phone number and copiright as variables
+#IDEA: Phone number and copiright as variables id:6
 
-#IDEA: Rewrite Footer by Grid
+#IDEA: Rewrite Footer by Grid id:16
 
-#TODO:50 **Add variables for:**
+#TODO: **Add variables for:** id:14
 - [ ] set colors
 - [ ] set sizes
 
-#TODO:20 **Fix Header**
+#TODO: **Fix Header** id:11
 - [ ] Stylize a dropdown lists
 - [ ] Add spaces into form
 
-#TODO:40 **Add spaces into banner**
+#TODO: **Add spaces into banner** id:9
 
-#DOING:0 **Styling ProductCard for menu**
+#DOING: **Styling ProductCard for menu** id:7
 - [ ] Pull down Name of product
 - [ ] Marker color depending on the consist
 - [ ] Add Ruble char
@@ -34,17 +34,17 @@
 - [ ] Bold ProductName
 - [ ] Check spaces around product cards  
 
-#TODO:60 **Add change language**
+#TODO: **Add change language** id:17
 
-#IDEA:0 Make documentation
+#IDEA: Make documentation id:15
 
-#TODO:10 **Styling ProductCard for order**
+#TODO: **Styling ProductCard for order** id:12
 
-#TODO:30 **Fix ListOfCategories**
+#TODO: **Fix ListOfCategories** id:10
 - [ ] pull down background :hover
 - [ ] invert background color (image)
 - [ ] text in bottom
 
-#IDEA:10 Find patterns for design internet-shop. How make shop? separate back-end/front-end
+#IDEA: Find patterns for design internet-shop. How make shop? separate back-end/front-end id:8
 
-#IDEA:20 Find hosting for MongoDB and NodeJS
+#IDEA: Find hosting for MongoDB and NodeJS id:18
