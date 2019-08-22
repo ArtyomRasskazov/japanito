@@ -202,7 +202,12 @@ div.Header button[name="openOrder"] {
 
 i.red {
   color: red;
-  font-size: 16px;
+  font-size: 18px;
+}
+
+i.white {
+  color: white;
+  font-size: 18px;
 }
 
 div.Order {
@@ -214,12 +219,14 @@ div.Order {
   padding: 47px 30px;
 }
 
-div.Banner button {
+div.Banner button,
+div.Footer input[type="button"] {
   background: red;
   color: white;
   font-weight: 700;
   border: none;
   height: 40px;
+  width: 260px;
 }
 
 button:hover, input[type="button"]:hover {
@@ -247,15 +254,94 @@ nav.Navigation > ul a:active {
   text-decoration: none;
 }
 
+div.Footer {
+  display: flex;
+  flex-flow: column wrap;
+  height: 200px;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+div.Footer > * {
+  width: 260px;
+}
+
+ul.FollowUs {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+ul.FollowUs li {
+  padding-right: 15px;
+}
+
+div.CopyRight {
+  height: 40px;
+  margin-top: 40px;
+}
+
+form.Search {
+  height: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+form.Search > input[type="text"] {
+  border: solid 1px black;
+  box-sizing: border-box;
+  height: inherit;
+  width: inherit;
+  padding-left: 10px;
+}
+
+form.Search > button {
+  position: absolute;
+  right: 0px;
+  border: none;
+  box-sizing: border-box;
+  background: red;
+  height: inherit;
+  width: 40px;
+}
+
+ul.AppDownload {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin-top: 40px;
+}
+
+ul.AppDownload img {
+  height: 40px;
+}
+
+ul.FooterMenu {
+  column-count: 2;
+  list-style-type: none;
+  line-height: 2;
+  padding-left: 0;
+  font-weight: 700;
+  height: 300px;
+  width: 390px;
+  align-self: stretch;
+}
+
 /* shadows */
 div.Order,
 div.Header,
+div.Footer,
 ul.ListOfCategories {
   z-index: 10;
   box-shadow: 0 0 16px rgba(0, 0, 0, .15);
 }
 
-div.Order,
-div.Header {
+div.Header,
+div.Footer {
   z-index: 20;
+}
+
+div.Order {
+  z-index: 30;
 }

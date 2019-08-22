@@ -28,11 +28,19 @@
     },
     {
       "name": "TODO",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "DOING",
       "hidden": false
+    },
+    {
+      "name": "IDEA",
+      "hidden": true
+    },
+    {
+      "name": "DONE",
+      "hidden": true
     }
   ],
   "marked": {

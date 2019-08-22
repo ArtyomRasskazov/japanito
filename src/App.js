@@ -2,7 +2,7 @@ import React from 'react';
 import ProductCard from './app/ProductCard'
 import Header from './app/Header'
 import Navigation from './app/Navigation'
-
+import Footer from './app/Footer'
 import productDataBase from './data/products.json'
 import productCategories from './data/categories.json'
 
@@ -34,8 +34,7 @@ class App extends React.Component {
       maxValueForOrder: 12,
       totalCost: 0,
       orderVisibility: { visibility: 'visible' }, // visible / hidden
-      orderList: {},
-      phoneNumber: '8-800-900-500-5'
+      orderList: {}
     };
 
     this.makeCatalog = this.makeCatalog.bind(this);
@@ -165,14 +164,16 @@ class App extends React.Component {
       <div className="App" style={styles.app}>
         <Header lang={this.state.lang}
                 cities={this.state.cities}
-                phoneNumber={this.state.phoneNumber}
                 userName={this.state.userName}
                 totalCost={this.state.totalCost}
                 makeOrder={this.makeOrder}/>
+
         {this.makeBanner()}
         {this.makeHeading()}
         {this.makeCatalog()}
         {this.makeOrder()}
+
+        <Footer />
       </div>
     );
   }

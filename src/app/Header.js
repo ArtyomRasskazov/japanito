@@ -1,4 +1,5 @@
 import React from 'react'
+import PhoneNumber from './PhoneNumber'
 import 'font-awesome/css/font-awesome.min.css'
 
 function Header (props) {
@@ -24,10 +25,7 @@ function Header (props) {
         </select>
       </form>
 
-      <div>
-          <i className="fa fa-phone red" />
-          &nbsp; {props.phoneNumber}
-      </div>
+      <PhoneNumber />
 
       <button name="userName">{props.userName} &nbsp; &nbsp;
           <i className="fa fa-user red" />
@@ -35,7 +33,7 @@ function Header (props) {
 
       <button name="openOrder">{cost} &nbsp;
           <i className="fa fa-rub" /> &nbsp; &nbsp;
-          <i className="fa fa-shopping-bag" />
+          <i className="fa fa-shopping-bag white" />
       </button>
 
     </div>

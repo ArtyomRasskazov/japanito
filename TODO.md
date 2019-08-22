@@ -1,24 +1,50 @@
-#DOING:0 **Create the footer**
+#DONE:0 **Create the footer**
+- [x] Create flexbox
+- [x] Paste Logo component
+- [x] Create component: PhoneNumber (can replace it into Header)
+- [x] Create component: FollowUs
+- [x] Create component: Copiright
+- [x] Create component: Two column list of links
+- [x] Create component: Search
+- [x] Create component: Comment
+- [x] Create component: Download Apps
 
-#TODO:30 **Add variables for set colors in LESS**
+#IDEA: Phone number and copiright as variables
 
-#TODO:60 **Stylize a dropdown lists**
+#IDEA: Rewrite Footer by Grid
 
-#TODO:20 **Add spaces into banner**
+#TODO:50 **Add variables for:**
+- [ ] set colors
+- [ ] set sizes
 
-#TODO:70 Add spaces into form
+#TODO:20 **Fix Header**
+- [ ] Stylize a dropdown lists
+- [ ] Add spaces into form
 
-#TODO:90 Pull down Name of product
+#TODO:40 **Add spaces into banner**
 
-#TODO:80 Marker color depending on the consist
+#DOING:0 **Styling ProductCard for menu**
+- [ ] Pull down Name of product
+- [ ] Marker color depending on the consist
+- [ ] Add Ruble char
+- [ ] Color the prise
+- [ ] Change Counter font-size
+- [ ] Fix background position
+- [ ] Add g. for weight
+- [ ] Bold ProductName
+- [ ] Check spaces around product cards  
 
-#TODO:10 **Add change language**
+#TODO:60 **Add change language**
 
-#TODO:50 **Make documentation**
+#IDEA:0 Make documentation
 
-#TODO:100 Stylize list of products in MakeOrder()
+#TODO:10 **Styling ProductCard for order**
 
-#TODO:40 **ListOfCategories**
+#TODO:30 **Fix ListOfCategories**
 - [ ] pull down background :hover
 - [ ] invert background color (image)
 - [ ] text in bottom
+
+#IDEA:10 Find patterns for design internet-shop. How make shop? separate back-end/front-end
+
+#IDEA:20 Find hosting for MongoDB and NodeJS
