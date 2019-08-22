@@ -18,6 +18,7 @@
       "IDEA",
       "NOTE",
       "REVIEW",
+      "MARK",
       "HELP"
     ]
   },
@@ -50,5 +51,10 @@
     "pedantic": false,
     "smartLists": true,
     "langPrefix": "language-"
+  },
+  "sync": {
+    "id": "5d5e2775907c04249b05a1bb",
+    "name": "ArtemRasskazov/japanito",
+    "useImdoneioForPriority": true
   }
 }
