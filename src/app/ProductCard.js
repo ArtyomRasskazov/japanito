@@ -1,12 +1,9 @@
 import React from 'react'
+import 'font-awesome/css/font-awesome.min.css'
 
 class ProductCard extends React.Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-
-    }
 
     this.makeCounter = this.makeCounter.bind(this);
     this.toOrder = this.toOrder.bind(this);
@@ -18,14 +15,20 @@ class ProductCard extends React.Component {
 
   makeCounter() {
     return (
-      <form id="ProductValue" className="counter">
-        <input type="button" value={"-"}
-               onClick={() => (this.toOrder('dec'))}
-               disabled={!(this.props.value > 0)}/>  {/* .value may be undefined! */}
+      <form className="counter">
+        <button type="button"
+                onClick={() => (this.toOrder('dec'))}
+                disabled={!(this.props.value > 0)}>  {/* .value may be undefined! */}
+          <i className="fa fa-minus" />
+        </button>
+
         <input type="text" value={this.props.value || 0} readOnly/>
-        <input type="button" value={"+"}
-               onClick={() => (this.toOrder('ink'))}
-               disabled={this.props.value >= this.props.maxValue}/>  {/* .value may be undefined! */}
+
+        <button type="button"
+                onClick={() => (this.toOrder('ink'))}
+                disabled={this.props.value >= this.props.maxValue}>  {/* .value may be undefined! */}
+          <i className="fa fa-plus" />
+        </button>
       </form>
     )
   }
@@ -34,13 +37,18 @@ class ProductCard extends React.Component {
     let photo = {
       backgroundImage: `url(${this.props.productData.photo})`
     }
+
+    let marker = (this.props.productData.mark === "Hit") ? {backgroundColor: `#f7cc20`} :
+                 (this.props.productData.mark === "Veg") ? {backgroundColor: `#8baf33`} :
+                 {backgroundColor: `none`};
+
     return (
-      <div className="ProductCard" style={photo}>
-        <div id="ProductWeight" className="weight"> {this.props.productData.weight} </div>
-        <div id="ProductMark" className="mark"> {this.props.productData.mark} </div>
-        <div id="ProductName" className="name"> {this.props.productData.name} </div>
-        <div id="ProductDescription" className="description"> {this.props.productData.description} </div>
-        <div id="ProductPrise" className="prise"> {this.props.productData.prise} </div>
+      <div className="ProductCard">
+        <div className="weight"> {this.props.productData.weight} g. </div>
+        <div className="mark white" style={marker}> {this.props.productData.mark} </div>
+        <div className="name" style={photo}> {this.props.productData.name} </div>
+        <div className="description"> {this.props.productData.description} </div>
+        <div className="prise red"> {this.props.productData.prise}&nbsp;<i className="fa fa-rub" /></div>
         {this.makeCounter()}
       </div>
     )

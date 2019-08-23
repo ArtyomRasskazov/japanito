@@ -41,6 +41,10 @@
     {
       "name": "DONE",
       "hidden": true
+    },
+    {
+      "name": "FIXME",
+      "hidden": true
     }
   ],
   "marked": {

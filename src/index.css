@@ -33,6 +33,8 @@ h2 {
   font-family: 'Stalinist One', cursive;
   font-size: 16px;
   color: #fd1c44;
+  margin: 0px;
+  margin-bottom: 45px;
 }
 
 ul {
@@ -61,7 +63,10 @@ ul.ProductsByCategories {
 
 ul.ProductsByCategories > li {
   margin-top: 110px;
-  margin-bottom: 45px;
+}
+
+ul.ProductsByCategories > li:last-child {
+  margin-bottom: 110px;
 }
 
 ul.ListOfProducts {
@@ -69,11 +74,6 @@ ul.ListOfProducts {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-ul.ListOfProducts div.ProductCard {
-  width: 160px;
-  background: top no-repeat;
 }
 
 ul.ListOfCategories {
@@ -155,59 +155,71 @@ div.Header button[name="openOrder"] {
                        "description description"
                        "prise counter";
   grid-template-columns: 50% 50%;
-  grid-template-rows: 30px 140px 50px 30px;
+  grid-template-rows: 30px 160px 40px 30px;
+  grid-gap: 5px;
+  width: 160px;
 }
 
-#ProductWeight {
+.ProductCard > * {
+  display: flex;
+  align-items: center;
+}
+
+div.weight {
   grid-area: weight;
 }
 
-#ProductMark {
+div.mark {
   grid-area: mark;
+  justify-content: center;
 }
 
-#ProductName {
+div.name {
   grid-area: name;
-  display: table-cell;
-  vertical-align: bottom;
+  align-items: flex-end;
+  background: 50% 30% / contain no-repeat;
+  font-weight: 700;
 }
 
-#ProductDescription {
+div.description {
   grid-area: description;
+  align-items: flex-start;
 }
 
 
-#ProductPrise {
+div.prise {
   grid-area: prise;
 }
 
 
-#ProductValue {
+div.value {
   grid-area: counter;
 }
 
-.counter {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+form.counter {
   align-items: stretch;
 }
 
-.counter > input{
+.counter > input,
+.counter > button {
   width: 33%;
   border: none;
   background: white;
   text-align: center;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-i.red {
+.red {
   color: red;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-i.white {
+.white {
   color: white;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 div.Order {

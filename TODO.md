@@ -1,4 +1,4 @@
-#DONE:0 **Create the footer**
+#DONE:10 **Create the footer**
 - [x] Create flexbox
 - [x] Paste Logo component
 - [x] Create component: PhoneNumber (can replace it into Header)
@@ -13,32 +13,43 @@
 
 #IDEA: Rewrite Footer by Grid
 
-#TODO:50 **Add variables for:**
+#TODO:40 **Add variables for**
 - [ ] set colors
 - [ ] set sizes
 
-#TODO:20 **Fix Header**
+#TODO:10 **Fix Header**
 - [ ] Stylize a dropdown lists
 - [ ] Add spaces into form
 
-#TODO:40 **Add spaces into banner**
+#TODO:20 **Add spaces into banner**
 
-#DOING:0 **Styling ProductCard for menu**
-- [ ] Pull down Name of product
-- [ ] Marker color depending on the consist
-- [ ] Add Ruble char
-- [ ] Color the prise
-- [ ] Change Counter font-size
-- [ ] Fix background position
-- [ ] Add g. for weight
-- [ ] Bold ProductName
-- [ ] Check spaces around product cards  
+#DONE:0 **Styling ProductCard for menu**
+- [x] Pull down Name of product
+- [x] Marker color depending on the consist
+- [x] Add Ruble char
+- [x] Color the prise
+- [x] Change Counter font-size
+- [x] Fix background position
+- [x] Add g. for weight
+- [x] Bold ProductName
+- [x] Check spaces around product cards
 
-#TODO:60 **Add change language**
+#FIXME: Problems when zooming
+
+#TODO:50 **Add change language**
 
 #IDEA:0 Make documentation
 
-#TODO:10 **Styling ProductCard for order**
+#DOING:0 **Styling ProductCard for order**
+- [ ] compose ProductCard when it in Order
+- [ ] make the weight and the mark is hidden
+- [ ] make prise is calculate
+- [ ] add 'remove' button
+- [ ] insert "Total discounted"
+- [ ] add button "Checkout"
+- [ ] add button for closing (may be in H2)
+- [ ] add paddings
+- [ ] showing onClick the button Card
 
 #TODO:30 **Fix ListOfCategories**
 - [ ] pull down background :hover
