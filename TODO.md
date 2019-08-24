@@ -1,4 +1,4 @@
-#DONE: **Create the footer** id:13
+#DONE: **Create the footer**
 - [x] Create flexbox
 - [x] Paste Logo component
 - [x] Create component: PhoneNumber (can replace it into Header)
