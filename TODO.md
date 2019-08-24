@@ -9,9 +9,9 @@
 - [x] Create component: Comment
 - [x] Create component: Download Apps
 
-#IDEA: Phone number and copiright as variables id:6
+#IDEA: Phone number and copiright as variables
 
-#IDEA: Rewrite Footer by Grid id:16
+#IDEA: Rewrite Footer by Grid
 
 #TODO:40 **Add variables for**
 - [ ] set colors
@@ -38,24 +38,24 @@
 
 #TODO:50 **Add change language**
 
-#IDEA: Make documentation id:15
+#IDEA: Make documentation
 
-#DOING:0 **Styling ProductCard for order**
-- [ ] compose ProductCard when it in Order
-- [ ] make the weight and the mark is hidden
-- [ ] make prise is calculate
-- [ ] add 'remove' button
-- [ ] insert "Total discounted"
-- [ ] add button "Checkout"
-- [ ] add button for closing (may be in H2)
-- [ ] add paddings
-- [ ] showing onClick the button Card
+#DONE:0 **Styling ProductCard for order**
+- [x] compose ProductCard when it in Order
+- [x] make the weight and the mark is hidden
+- [x] make prise is calculate
+- [x] add 'remove' button
+- [x] insert "Total discounted"
+- [x] add button "Checkout"
+- [x] add button for closing (may be in H2)
+- [x] add paddings
+- [x] showing onClick the button Card
 
-#TODO: **Fix ListOfCategories** id:10
+#TODO: **Fix ListOfCategories**
 - [ ] pull down background :hover
 - [ ] invert background color (image)
 - [ ] text in bottom
 
-#IDEA: Find patterns for design internet-shop. How make shop? separate back-end/front-end id:8
+#IDEA: Find patterns for design internet-shop. How make shop? separate back-end/front-end
 
-#IDEA: Find hosting for MongoDB and NodeJS id:18
+#IDEA: Find hosting for MongoDB and NodeJS

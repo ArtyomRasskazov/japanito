@@ -6,6 +6,8 @@ import Footer from './app/Footer'
 import productDataBase from './data/products.json'
 import productCategories from './data/categories.json'
 
+import 'font-awesome/css/font-awesome.min.css'
+
 import sushi_main from './data/sushi_main.png'
 
 let space = (document.documentElement.clientWidth-1024) / 2;
@@ -33,35 +35,66 @@ class App extends React.Component {
       userName: 'Login',
       maxValueForOrder: 12,
       totalCost: 0,
-      orderVisibility: { visibility: 'visible' }, // visible / hidden
-      orderList: {}
+      orderVisibility: { visibility: 'hidden' }, // visible / hidden
+      orderList: {},
+      costList: {}
     };
 
     this.makeCatalog = this.makeCatalog.bind(this);
     this.makeHeading = this.makeHeading.bind(this);
     this.setOrder = this.setOrder.bind(this);
+    this.setOrderVisible = this.setOrderVisible.bind(this);
   }
 
-  setOrder(product, op) {
+  setOrder(product, prise, op) {
     let orderList = this.state.orderList;
+    let costList = this.state.costList;
+    let totalCost = this.state.totalCost;
+
     switch (op) {
       case 'ink':
-        if (typeof(orderList[product]) !== 'number') {orderList[product] = 0};
+        if (typeof(orderList[product]) !== 'number') {
+          orderList[product] = 0;
+          costList[product] = 0;
+        };
 
         orderList[product] = orderList[product] + 1;
+        costList[product] = costList[product] + prise;
+        totalCost = totalCost + prise;
 
         break;
       case 'dec':
         orderList[product] = orderList[product] - 1;
+        costList[product] = costList[product] - prise;
+        totalCost = totalCost - prise;
 
-        if (orderList[product] === 0) {delete orderList[product]}
+        if (orderList[product] === 0) {
+          delete orderList[product];
+          delete costList[product];
+        }
+
+        break;
+      case 'clr':
+        totalCost = totalCost - ( orderList[product] * prise );
+        delete orderList[product];
+        delete costList[product];
 
         break;
       default:
-        return console.error("Valid second argumet are: 'ink', 'dec'");
+        return console.error("Valid third argumet are: 'ink', 'dec' or 'clr'");
     }
 
     this.setState({orderList: orderList})
+    this.setState({costList: costList})
+    this.setState({totalCost: totalCost})
+  }
+
+  setOrderVisible(visible) {
+    let orderVisibility = visible ?
+                          { visibility: 'visible' } :
+                          { visibility: 'hidden' } ;
+
+    this.setState({orderVisibility: orderVisibility})
   }
 
   makeOrder() {
@@ -73,7 +106,8 @@ class App extends React.Component {
                 <ProductCard productData={productData}
                     value={this.state.orderList[productData.id]}
                     maxValue={this.state.maxValueForOrder}
-                    setOrder={this.setOrder}/>
+                    setOrder={this.setOrder}
+                    cost={this.state.costList[productData.id]}/>
               </li>
             )
           } else {
@@ -82,6 +116,7 @@ class App extends React.Component {
         })
 
         return (
+/* FIXME: Returns twise, then we have two lists. We need one */
           <ul className="OrderList">
             {product}
           </ul>
@@ -90,8 +125,25 @@ class App extends React.Component {
 
     return (
       <div className="Order" style={this.state.orderVisibility}>
-        <h2>Ваш заказ</h2>
+        <h2>Ваш заказ
+
+          <button type="button"
+                  className="closeOrderListButton"
+                  onClick={() => (this.setOrderVisible(false))} >
+            <i className="fa fa-times red" />
+          </button>
+        </h2>
+
         {productsByCategories}
+{/* FIXME: set margin-left for checkoutButton (center) and Total cost */}
+        <h1>
+          Total cost: <strong>{this.state.totalCost} <i className="fa fa-rub" /></strong>
+      </h1>
+
+        <input type="button"
+               value="Checkout"
+               className="checkoutButton"
+               disabled={!(this.state.totalCost > 0)} />  {/* may be undefined */}
       </div>
     )
   }
@@ -166,7 +218,8 @@ class App extends React.Component {
                 cities={this.state.cities}
                 userName={this.state.userName}
                 totalCost={this.state.totalCost}
-                makeOrder={this.makeOrder}/>
+                makeOrder={this.makeOrder}
+                setOrderVisible={this.setOrderVisible}/>
 
         {this.makeBanner()}
         {this.makeHeading()}

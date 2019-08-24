@@ -27,14 +27,29 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 16px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: 'Stalinist One', cursive;
   font-size: 16px;
   color: #fd1c44;
-  margin: 0px;
-  margin-bottom: 45px;
+  margin: 0px 0px 45px;
+}
+
+h2 button {
+  border: none;
+  border-radius: 50%;
+  background: white;
+  height: 2rem;
+  width: 2rem;
+  padding: 0px;
 }
 
 ul {
@@ -160,6 +175,17 @@ div.Header button[name="openOrder"] {
   width: 160px;
 }
 
+.OrderList {
+  padding: 29px 0px 40px;
+}
+
+.OrderList .ProductCard {
+  grid-template-areas: "clearButton name description counter prise";
+  grid-template-columns: 0px auto auto 80px 60px;
+  grid-template-rows: 60px;
+  width: 100%;
+}
+
 .ProductCard > * {
   display: flex;
   align-items: center;
@@ -169,9 +195,17 @@ div.weight {
   grid-area: weight;
 }
 
+.OrderList div.weight {
+  display: none;
+}
+
 div.mark {
   grid-area: mark;
   justify-content: center;
+}
+
+.OrderList div.mark {
+  display: none;
 }
 
 div.name {
@@ -181,16 +215,33 @@ div.name {
   font-weight: 700;
 }
 
+.OrderList div.name {
+  align-items: center;
+  /* justify-content: flex-end; */
+  background: 0% 50% / contain no-repeat;
+  padding-left: 80px;
+  font-weight: normal;
+}
+
 div.description {
   grid-area: description;
   align-items: flex-start;
 }
 
+.OrderList div.description {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: hidden;
+}
 
 div.prise {
   grid-area: prise;
 }
 
+.OrderList div.prise {
+  justify-content: flex-end;
+}
 
 div.value {
   grid-area: counter;
@@ -210,6 +261,25 @@ form.counter {
   font-weight: 700;
 }
 
+button.clearButton {
+  grid-area: clearButton;
+  display: none;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  font-size: 16px;
+  font-weight: 700;
+  height: 16px;
+  width: 16px;
+  padding: 0px;
+  text-align: center;
+  justify-content: center;
+}
+
+.OrderList button.clearButton {
+  display: flex;
+}
+
 .red {
   color: red;
   font-size: 16px;
@@ -223,16 +293,26 @@ form.counter {
 }
 
 div.Order {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  padding: 47px 30px;
+  width: 400px;
+  padding: 47px 30px 57px;
+}
+
+div.Order h1 {
+  padding: 47px 0px 45px;
+  box-shadow: 0px -2px 2px rgba(0, 0, 0, .2);
+  outline: white solid 2px; /* hides shadow a sides and bottom */
 }
 
 div.Banner button,
-div.Footer input[type="button"] {
+div.Footer input[type="button"],
+.checkoutButton {
   background: red;
   color: white;
   font-weight: 700;
