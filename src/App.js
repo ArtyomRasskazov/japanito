@@ -30,7 +30,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      lang: 'ENG',
+      lang: 'eng',
+      currentCity: 'Moscow',
       cities: ['St. Petersburg', 'Moscow', 'Omsk', 'California'],
       userName: 'Login',
       maxValueForOrder: 12,
@@ -44,6 +45,21 @@ class App extends React.Component {
     this.makeHeading = this.makeHeading.bind(this);
     this.setOrder = this.setOrder.bind(this);
     this.setOrderVisible = this.setOrderVisible.bind(this);
+    this.setRegion = this.setRegion.bind(this);
+  }
+
+  setRegion(value) {
+    switch (value) {
+      case 'ru':
+      case 'eng':
+        this.setState({lang: value});
+        break;
+      case 1:
+        this.setState({currentCity: value});
+        break;
+      default:
+        return console.error("Invalid parameter: " + value);
+    }
   }
 
   setOrder(product, prise, op) {
@@ -215,11 +231,13 @@ class App extends React.Component {
     return (
       <div className="App" style={styles.app}>
         <Header lang={this.state.lang}
+                currentCity={this.state.currentCity}
                 cities={this.state.cities}
                 userName={this.state.userName}
                 totalCost={this.state.totalCost}
                 makeOrder={this.makeOrder}
-                setOrderVisible={this.setOrderVisible}/>
+                setOrderVisible={this.setOrderVisible}
+                setRegion={this.setRegion}/>
 
         {this.makeBanner()}
         {this.makeHeading()}

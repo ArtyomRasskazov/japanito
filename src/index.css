@@ -138,22 +138,31 @@ div.Header > form.region {
   align-items: stretch;
 }
 
-div.Header input[type="radio"] {
-  display: none;
-}
-
-div.Header input[checked] + label {
-  color: red
-}
-
+.PhoneNumber,
 div.Header button,
-div.Header select[name="citySelector"] {
+div.Header select[name="citySelector"],
+form.region .wrapper {
   border: none;
   background: white;
+  width: 160px;
+  overflow: hidden;
 }
 
-div.Header button {
-  width: 160px;
+form.region button {
+  width: 30px;
+  padding: 0px;
+  display: inline-flex;
+  align-items: center;
+  color: red;
+}
+
+form.region button[disabled] {
+  color: black;
+  cursor: auto;
+}
+
+form.region .wrapper {
+  margin-left: 20px;
 }
 
 div.Header button[name="openOrder"] {
@@ -321,7 +330,10 @@ div.Footer input[type="button"],
   width: 260px;
 }
 
-button:hover, input[type="button"]:hover {
+button:hover,
+input[type="button"]:hover,
+label:hover,
+select:hover {
   cursor: pointer;
 }
 

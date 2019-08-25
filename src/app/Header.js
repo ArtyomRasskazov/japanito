@@ -1,6 +1,17 @@
 import React from 'react'
 import PhoneNumber from './PhoneNumber'
 import 'font-awesome/css/font-awesome.min.css'
+import arrowDown from '../data/caret-down-solid.svg'
+
+//QUESTION: how I can change color for backgroundImage when I used SVG?
+
+const styles = {
+  citySelector: {
+    height: '100%',
+    width: '110%',
+    background: `right / 50% 50% no-repeat url(${arrowDown})`
+  }
+}
 
 function Header (props) {
   let cost = props.totalCost;
@@ -8,21 +19,43 @@ function Header (props) {
       cost = (cost - cost%1000) / 1000 + '\xa0' + cost%1000;
   }
 
+  function  makeList(cities) {
+    let makeOption = cities.map( city => {
+      return (
+        <option>
+          {city}
+        </option>
+      )
+    })
+
+    return (
+      <select name="citySelector"
+              style={styles.citySelector}>
+        {makeOption}
+      </select>
+    )
+  };
+
   return (
     <div className="Header">
       <form className="region">
-        <input type="radio" name="langSelector" checked={props.lang === 'RU'} />
-        <label>RU</label>
+        <button type="button"
+                className="ruButton"
+                onClick={() => (props.setRegion('ru'))}
+                disabled={props.lang === 'ru'} >
+          RU
+        </button>
 
-        <input type="radio" name="langSelector" checked={props.lang === 'ENG'} />
-        <label>ENG  </label>
+        <button type="button"
+                className="ruButton"
+                onClick={() => (props.setRegion('eng'))}
+                disabled={props.lang === 'eng'}>
+          ENG
+        </button>
 
-        <select name="citySelector">
-            <option>St. Petersburg</option>
-            <option>Moskow</option>
-            <option>Omsk</option>
-            <option>California</option>
-        </select>
+        <div className="wrapper">
+          {makeList(props.cities)}
+        </div>
       </form>
 
       <PhoneNumber />
