@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=cyrillic');
 @import url('https://fonts.googleapis.com/css?family=Stalinist+One&display=swap&subset=cyrillic');
 
+/* TODO: Add variables for colors and sizes */
+
 :root {
   --padding: 0px;
 }
@@ -153,11 +155,10 @@ form.region button {
   padding: 0px;
   display: inline-flex;
   align-items: center;
-  color: red;
 }
 
 form.region button[disabled] {
-  color: black;
+  color: red;
   cursor: auto;
 }
 
@@ -357,6 +358,8 @@ nav.Navigation > ul a:active {
   color: red;
   text-decoration: none;
 }
+
+/* IDEA: Rewrite Footer by Grid */
 
 div.Footer {
   display: flex;

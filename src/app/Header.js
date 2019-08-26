@@ -30,7 +30,7 @@ function Header (props) {
 
     return (
       <select name="citySelector"
-              style={styles.citySelector}>
+              style={styles.citySelector} onChange={props.setRegion}>
         {makeOption}
       </select>
     )
