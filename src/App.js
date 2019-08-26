@@ -23,9 +23,8 @@ const styles = {
     // paddingLeft: space,
     // paddingRight: space,
   },
-  banner: {
-    paddingTop: '40px',
-    background: `content-box right bottom 25% no-repeat url(${sushi_main})`
+  bannerImage: {
+    backgroundImage: `url(${sushi_main})`
   }
 }
 
@@ -210,7 +209,7 @@ class App extends React.Component {
     )
   }
 
-  // TODO: Fix ListOfCategories:
+  // FIXME ListOfCategories:
   // - [ ] pull down background :hover
   // - [ ] invert background color (image)
   // - [ ] text most be in bottom
@@ -234,13 +233,16 @@ class App extends React.Component {
     )
   }
 
-// TODO: Add spaces into banner
   makeBanner() {
     return (
-      <div className="Banner" style={styles.banner}>
+      <div className="Banner" style={styles.bannerImage}>
         <Navigation />
-        <h1>Бесплатная доставка при заказе</h1>
-        <h2>от 800 руб.</h2>
+
+        <p>
+          Бесплатная доставка при заказе
+          <span> от 800 руб.</span>
+        </p>
+
         <button>Перейти к заказу</button>
       </div>
     )

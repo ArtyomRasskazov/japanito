@@ -320,6 +320,32 @@ div.Order h1 {
   outline: white solid 2px; /* hides shadow a sides and bottom */
 }
 
+div.Banner {
+  padding-top: 40px;
+  background: content-box no-repeat;
+  background-size: auto 420px;
+  background-position: right bottom -40px;
+  /* background-image sets in App: styles.bannerImage */
+}
+
+div.Banner p {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 35px 0px;
+  width: 60%;
+}
+
+div.Banner span {
+  font-family: 'Stalinist One', cursive;
+  font-size: 28px;
+  color: red;
+}
+
+div.Banner button {
+  margin-bottom: 120px;
+}
+
 div.Banner button,
 div.Footer input[type="button"],
 .checkoutButton {
