@@ -3,8 +3,6 @@ import PhoneNumber from './PhoneNumber'
 import 'font-awesome/css/font-awesome.min.css'
 import arrowDown from '../data/caret-down-solid.svg'
 
-//QUESTION: how I can change color for backgroundImage when I used SVG?
-
 const styles = {
   citySelector: {
     height: '100%',

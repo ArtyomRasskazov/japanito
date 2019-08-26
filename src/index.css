@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Stalinist+One&display=swap&subset=cyrillic');
 
 /* TODO: Add variables for colors and sizes */
+/* QUESTION: How I can change color for backgroundImage when I used SVG?
+             It's Needed for arrow in citySelector and ListOfCategories */
 
 :root {
   --padding: 0px;
@@ -103,7 +105,6 @@ ul.ListOfCategories {
 
 ul.ListOfCategories li {
   background: center / 40% no-repeat ;
-  text-align: center;
   height: 120px;
   width: 180px;
   transition: all .2s ease-in;
@@ -112,12 +113,30 @@ ul.ListOfCategories li {
 ul.ListOfCategories li:hover {
   height: 130px;
   background-color: red;
+  background-position-y: 30%;
 }
 
 ul.ListOfCategories a {
-  color: white;
   text-decoration: none;
 }
+
+ul.ListOfCategories li h2 {
+  color: transparent;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transition: all .2s ease-in;
+}
+
+ul.ListOfCategories li:hover h2{
+  color: white;
+}
+
+/* ul.ListOfCategories a {
+  color: white;
+  text-decoration: none;
+} */
 
 div.Header {
   position: fixed;
