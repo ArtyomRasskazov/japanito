@@ -62,7 +62,7 @@ function Header (props) {
           <i className="fa fa-user red" />
       </button>
 
-      <button name="openOrder"
+      <button className="red" name="openOrder"
               onClick={() => (props.setOrderVisible(true))}>
           {cost} &nbsp;
           <i className="fa fa-rub" /> &nbsp; &nbsp;

@@ -18,7 +18,7 @@ function Footer() {
       <FooterMenu />
 
       <Search />
-      <input type="button" value="Отправить отзыв" />
+      <input type="button" className="red" value="Отправить отзыв" />
       <AppDownload />
     </div>
   )

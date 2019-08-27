@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=cyrillic');
 @import url('https://fonts.googleapis.com/css?family=Stalinist+One&display=swap&subset=cyrillic');
 
-/* TODO: Add variables for colors and sizes */
 /* QUESTION: How I can change color for backgroundImage when I used SVG?
              It's Needed for arrow in citySelector and ListOfCategories */
 
 :root {
   --padding: 0px;
+  --gray: #484848;
+  --gray-focus: #7f7f7f;
+  --gray-unfocus: #c8c8c8;
+  --red: #fd1c44;
+  --red-hover: #ff3f5f;
+  --red-active: #ed143a;
 }
 
 body {
@@ -14,7 +19,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #484848;
+  color: var(--gray);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -43,14 +48,34 @@ h2 {
   align-items: center;
   font-family: 'Stalinist One', cursive;
   font-size: 16px;
-  color: #fd1c44;
+  color: var(--red);
   margin: 0px 0px 45px;
 }
 
-h2 button {
+button,
+input[type="button"] {
+  background: white;
+}
+
+button.red,
+input[type="button"].red {
+  color:white;
+  background: var(--red);
+}
+
+button.red:hover,
+input[type="button"].red:hover {
+  background: var(--red-hover);
+}
+
+button.red:active,
+input[type="button"].red:active {
+  background: var(--red-active);
+}
+
+h2 button { /* for close / filter */
   border: none;
   border-radius: 50%;
-  background: white;
   height: 2rem;
   width: 2rem;
   padding: 0px;
@@ -112,8 +137,13 @@ ul.ListOfCategories li {
 
 ul.ListOfCategories li:hover {
   height: 130px;
-  background-color: red;
+  background-color: var(--red);
   background-position-y: 30%;
+  transition: all 0s;
+}
+
+ul.ListOfCategories li:active {
+  background-color: var(--red-active);
 }
 
 ul.ListOfCategories a {
@@ -122,7 +152,7 @@ ul.ListOfCategories a {
 
 ul.ListOfCategories li h2 {
   color: transparent;
-  height: 90%;
+  height: 92%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -132,11 +162,6 @@ ul.ListOfCategories li h2 {
 ul.ListOfCategories li:hover h2{
   color: white;
 }
-
-/* ul.ListOfCategories a {
-  color: white;
-  text-decoration: none;
-} */
 
 div.Header {
   position: fixed;
@@ -164,7 +189,6 @@ div.Header button,
 div.Header select[name="citySelector"],
 form.region .wrapper {
   border: none;
-  background: white;
   width: 160px;
   overflow: hidden;
 }
@@ -177,17 +201,12 @@ form.region button {
 }
 
 form.region button[disabled] {
-  color: red;
+  color: var(--red);
   cursor: auto;
 }
 
 form.region .wrapper {
   margin-left: 20px;
-}
-
-div.Header button[name="openOrder"] {
-  color: white;
-  background: red;
 }
 
 /* ProductCard.js */
@@ -284,7 +303,6 @@ form.counter {
 .counter > button {
   width: 33%;
   border: none;
-  background: white;
   text-align: center;
   font-size: 16px;
   font-weight: 700;
@@ -295,7 +313,6 @@ button.clearButton {
   display: none;
   border: none;
   border-radius: 50%;
-  background: white;
   font-size: 16px;
   font-weight: 700;
   height: 16px;
@@ -310,7 +327,7 @@ button.clearButton {
 }
 
 .red {
-  color: red;
+  color: var(--red);
   font-size: 16px;
   font-weight: 700;
 }
@@ -358,7 +375,7 @@ div.Banner p {
 div.Banner span {
   font-family: 'Stalinist One', cursive;
   font-size: 28px;
-  color: red;
+  color: var(--red);
 }
 
 div.Banner button {
@@ -368,8 +385,6 @@ div.Banner button {
 div.Banner button,
 div.Footer input[type="button"],
 .checkoutButton {
-  background: red;
-  color: white;
   font-weight: 700;
   border: none;
   height: 40px;
@@ -395,12 +410,17 @@ nav.Navigation > ul li {
 }
 
 nav.Navigation > ul a {
-  color: black;
+  color: var(--gray);
+  text-decoration: none;
+}
+
+nav.Navigation > ul a:hover {
+  color: var(--red-hover);
   text-decoration: none;
 }
 
 nav.Navigation > ul a:active {
-  color: red;
+  color: var(--red-active);
   text-decoration: none;
 }
 
@@ -429,6 +449,15 @@ ul.FollowUs li {
   padding-right: 15px;
 }
 
+ul.FollowUs a,
+ul.FollowUs a:active {
+  color: var(--red);
+}
+
+ul.FollowUs a:hover {
+  color: var(--red-hover);
+}
+
 div.CopyRight {
   height: 40px;
   margin-top: 40px;
@@ -441,11 +470,15 @@ form.Search {
 }
 
 form.Search > input[type="text"] {
-  border: solid 1px black;
+  border: solid 1px var(--gray-unfocus);
   box-sizing: border-box;
   height: inherit;
   width: inherit;
   padding-left: 10px;
+}
+
+form.Search > input[type="text"]:focus {
+  border-color: var(--gray-focus);
 }
 
 form.Search > button {
@@ -453,7 +486,6 @@ form.Search > button {
   right: 0px;
   border: none;
   box-sizing: border-box;
-  background: red;
   height: inherit;
   width: 40px;
 }

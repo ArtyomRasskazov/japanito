@@ -174,7 +174,7 @@ class App extends React.Component {
 
         <input type="button"
                value="Checkout"
-               className="checkoutButton"
+               className="checkoutButton red"
                disabled={!(this.state.totalCost > 0)} />  {/* may be undefined */}
       </div>
     )
@@ -246,7 +246,7 @@ class App extends React.Component {
           <span> от 800 руб.</span>
         </p>
 
-        <button>Перейти к заказу</button>
+        <button className="red">Перейти к заказу</button>
       </div>
     )
   }
