@@ -13,7 +13,7 @@ function FooterMenu(props) {
       contacts;
 
   switch (props.lang) {
-    case 'ru':
+    case 'RU':
       restaurants = 'Рестораны';
       stocks = 'Акции';
       news = 'Новости';

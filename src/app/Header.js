@@ -39,15 +39,15 @@ function Header (props) {
       <form className="region">
         <button type="button"
                 className="ruButton"
-                onClick={() => (props.setRegion('ru'))}
-                disabled={props.lang === 'ru'} >
+                onClick={() => (props.setLocale('RU'))}
+                disabled={props.lang === 'RU'} >
           RU
         </button>
 
         <button type="button"
-                className="ruButton"
-                onClick={() => (props.setRegion('eng'))}
-                disabled={props.lang === 'eng'}>
+                className="engButton"
+                onClick={() => (props.setLocale('ENG'))}
+                disabled={props.lang === 'ENG'}>
           ENG
         </button>
 

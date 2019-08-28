@@ -70,7 +70,6 @@ class App extends React.Component {
         })
 
         return (
-          //if key in productDataBase consist more than one word it crash?
           <li key={category} id={category}> {category}
             <ul className="ListOfProducts">
               {product}

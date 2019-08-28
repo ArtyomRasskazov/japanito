@@ -2,7 +2,7 @@ import React from 'react'
 import 'font-awesome/css/font-awesome.min.css'
 
 function Search(props) {
-  let siteSearch = (props.lang === 'ru') ?
+  let siteSearch = (props.lang === 'RU') ?
                         'Отправить отзыв' :
                         'Site search' ;
 

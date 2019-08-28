@@ -8,7 +8,7 @@ import Search from './Search'
 import AppDownload from './AppDownload'
 
 function Footer(props) {
-  let sendTheComment = (props.lang === 'ru') ?
+  let sendTheComment = (props.lang === 'RU') ?
                         'Отправить отзыв' :
                         'Send the comment' ;
                         

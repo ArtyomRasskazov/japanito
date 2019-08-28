@@ -10,13 +10,19 @@ import 'font-awesome/css/font-awesome.min.css'
 
 import sushi_main from './data/sushi_main.png'
 
-// TODO: languages support
-// - [ ] Create DB for all texts
-// - [ ] Parse DB in statement
-// - [ ] Replace texts to statement
-
+// TODO: Delete unused files, build production and merge to master
 // FIXME: Problems when zooming
-// IDEA: Make documentation
+
+// IDEA: Restructuring (new brunch)
+// - [ ] Create database for all texts including phone number and copyright
+// - [ ] Try make state.locale with function once before rendering
+// - [ ] Rewrite Footer using a grid
+// - [ ] Make something like <div><h2>name</h2>description</div> in ProductCard
+// - [ ] Split into smaller components
+// - [ ] Remake css following the "Styling in react"
+// - [ ] Use font-awesome 5
+// - [ ] Make documentation (use JSDoc)
+// - [ ] Try color *.svg when it background
 
 let space = (document.documentElement.clientWidth-1024) / 2;
 let root = document.querySelector(':root');
@@ -32,14 +38,21 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-//  IDEA: Phone number and copiright as variables
-
     this.state = {
       locale: {
-        lang: 'eng',
+        lang: 'ENG',
         name: 'name',
         description: 'description',
         g: 'g.',
+        filter: 'Filter',
+        totalCost: 'Total cost:',
+        categories: {
+          Roll: "Roll",
+          Sushi: "Sushi",
+          Set: "Set",
+          Noodles: "Noodles",
+          Soup: "Soup"
+        },
         cities: {
           moscow: 'Moscow',
           stPetersburg: 'St. Petersburg',
@@ -60,7 +73,7 @@ class App extends React.Component {
       userName: 'Login',
       maxValueForOrder: 12,
       totalCost: 0,
-      orderVisibility: { visibility: 'hidden' }, // visible / hidden
+      orderVisibility: { visibility: 'hidden' },
       orderList: {},
       costList: {}
     };
@@ -70,48 +83,51 @@ class App extends React.Component {
     this.setOrder = this.setOrder.bind(this);
     this.setOrderVisible = this.setOrderVisible.bind(this);
     this.setRegion = this.setRegion.bind(this);
+    this.setLocale = this.setLocale.bind(this);
   }
 
-  setRegion(value) {
+  setLocale(value) {
   // QUESTION: Why it event doesn't work when I used input radio?
   // <input type="radio"
   //        name="langSelector"
-  //        value="eng"
-  //        onChange={props.setRegion}
-  //        checked={props.lang === 'eng'} />
+  //        value="ENG"
+  //        onChange={props.setLocale}
+  //        checked={props.lang === 'ENG'} />
   // Now I use just button and onClick
-
-  // TODO: separate set city and set locale (ENG by default)
-  // TODO: rewrite eng/ru to uppercase
 
     let locale = this.state.locale;
 
     switch (value) {
-      case 'ru':
-        locale.lang = 'ru'
+      case 'RU':
+        locale.lang = 'RU'
         locale.name = 'name_ru'
         locale.description = 'description_ru'
         locale.g = 'г.'
+        locale.filter = 'Фильтр'
+        locale.totalCost = 'Итого со скидкой:'
         locale.cities = this.state.cities_ru
-
-        this.setState({locale: locale});
-        break;
-
-      case 'eng':
-        locale.lang = 'eng'
-        locale.name = 'name'
-        locale.description = 'description'
-        locale.g = 'g.'
-        locale.cities = this.state.cities
-
-        this.setState({locale: locale});
         break;
 
       default:
-        if (this.state.cities.hasOwnProperty(value.target.value)) {
-          this.setState({currentCity: value.target.value});
-        }
-        console.log('Current city: ', this.state.currentCity);
+        locale.lang = 'ENG'
+        locale.name = 'name'
+        locale.description = 'description'
+        locale.g = 'g.'
+        locale.filter = 'Filter'
+        locale.totalCost = 'Total cost:'
+        locale.cities = this.state.cities
+    }
+    // eslint-disable-next-line
+    productCategories.map(category => {
+      locale.categories[category.name] = category[locale.name]
+    })
+
+    this.setState({locale: locale});
+  }
+
+  setRegion(event) {
+    if (this.state.cities.hasOwnProperty(event.target.value)) {
+      this.setState({currentCity: event.target.value});
     }
   }
 
@@ -173,6 +189,9 @@ class App extends React.Component {
             return (
               <li key={productData.id}>
                 <ProductCard productData={productData}
+                    name={this.state.locale.name}
+                    description={this.state.locale.description}
+                    g={this.state.locale.g}
                     value={this.state.orderList[productData.id]}
                     maxValue={this.state.maxValueForOrder}
                     setOrder={this.setOrder}
@@ -189,23 +208,23 @@ class App extends React.Component {
 
     return (
       <div className="Order" style={this.state.orderVisibility}>
-        <h2>Ваш заказ
+        <h1>Ваш заказ
 
           <button type="button"
                   className="closeOrderListButton"
                   onClick={() => (this.setOrderVisible(false))} >
-            <i className="fa fa-times red" />
+            <i className="fa fa-times" />
           </button>
-        </h2>
+        </h1>
 
         <ul className="OrderList">
           {productsByCategories}
         </ul>
 
-{/* FIXME: set margin-left for checkoutButton (center) and Total cost */}
-        <h1>
-          Total cost: <strong>{this.state.totalCost} <i className="fa fa-rub" /></strong>
-      </h1>
+        {/* FIXME: set margin-left forTotal cost */}
+        <h2>
+          {this.state.locale.totalCost}<strong>{this.state.totalCost} <i className="fa fa-rub" /></strong>
+        </h2>
 
         <input type="button"
                value="Checkout"
@@ -218,8 +237,7 @@ class App extends React.Component {
   makeCatalog() { //build list of products from productDataBase (sorted by categories)
     let productsByCategories = Object.keys(productDataBase).map(category => {
 
-        // TODO: figure out how to localize categoryName
-        let categoryName = category;
+      let categoryName = this.state.locale.categories[category];
 
         let product = productDataBase[category].map(productData => {
           return (
@@ -236,11 +254,17 @@ class App extends React.Component {
         })
 
         return (
-          //if key in productDataBase consist more than one word it crash?
+
+// QUESTION: if key in productDataBase consist more than one word it crash?
+
           <li key={category} id={category}>
-            <h2>
+            <h1>
               {categoryName}
-            </h2>
+              <button type="button">
+                <h2>{this.state.locale.filter}</h2>
+                <i className="fa fa-plus" />
+              </button>
+            </h1>
             <ul className="ListOfProducts">
               {product}
             </ul>
@@ -258,15 +282,16 @@ class App extends React.Component {
   makeHeading() {
 
     let categories = productCategories.map(category => {
+
       let hrefID = "#" + category.name; //id <li> with category name generated by makeCatalog()
       let liIcon = {backgroundImage: `url(${category.icon})`}
 
       return (
         <li key={category.name} style={liIcon}>
           <a href={hrefID}>
-            <h2>
+            <h1>
               {category[this.state.locale.name]}
-            </h2>
+            </h1>
           </a>
         </li>
       )
@@ -283,7 +308,7 @@ class App extends React.Component {
     let message, buttonValue;
 
     switch (this.state.locale.lang) {
-      case 'ru':
+      case 'RU':
         message = (
             <p>
               Бесплатная доставка при заказе
@@ -314,6 +339,7 @@ class App extends React.Component {
     )
   }
 
+
   render() {
     return (
       <div className="App" style={styles.app}>
@@ -324,7 +350,8 @@ class App extends React.Component {
                 totalCost={this.state.totalCost}
                 makeOrder={this.makeOrder}
                 setOrderVisible={this.setOrderVisible}
-                setRegion={this.setRegion}/>
+                setRegion={this.setRegion}
+                setLocale={this.setLocale}/>
 
         {this.makeBanner()}
         {this.makeHeading()}
