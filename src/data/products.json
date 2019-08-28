@@ -1,0 +1,118 @@
+{
+  "Roll" :
+  [
+    {
+      "id": "1",
+      "name": "Philadelphiya",
+      "name_ru": "Филадельфия",
+      "description": "with salmon",
+      "description_ru": "c лососем",
+      "weight": "250",
+      "prise": "435",
+      "mark": "Hit",
+      "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AADtZYTDp8dQbPaidf1Xp2eta/Roll_Philadelphiya.jpg"
+    }
+    ,{
+      "id": "2",
+      "name": "Syake roll",
+      "name_ru": "Сяке ролл",
+      "description": "with salmon",
+      "description_ru": "c лососем",
+      "weight": "190",
+      "prise": "210",
+      "mark": "",
+      "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AAAiUCBbHzA7j-imlJ-PcaMQa/Roll_Syake.jpg"
+    }
+    ,{
+      "id": "3",
+      "name": "Tekka roll",
+      "name_ru": "Тэкка ролл",
+      "description": "with tuna",
+      "description_ru": "c тунцом",
+      "weight": "190",
+      "prise": "245",
+      "mark": "",
+      "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AAAxKXxIHnufTX3wC5lEocAua/Roll_Tekka.jpg"
+    }
+    ,{
+      "id": "4",
+      "name": "Unagi roll",
+      "name_ru": "Унаги ролл",
+      "description": "with eel",
+      "description_ru": "c угрём",
+      "weight": "190",
+      "prise": "245",
+      "mark": "Hit",
+      "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AAA0qXbQoPSPRbHK8c9QtHjea/Roll_Unagi.jpg"
+    }
+    ,{
+      "id": "5",
+      "name": "Talat",
+      "name_ru": "Яки хамачи",
+      "description": "with fried yellowtail",
+      "description_ru": "c жареным желтохвостиком",
+      "weight": "230",
+      "prise": "55",
+      "mark": "",
+      "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AABVAg-dTyewzJsFwGTSm6zca/Roll_Talat.jpg"
+    }
+  ],
+  "Sushi" :
+  [
+    {
+      "id": "6",
+      "name": "Syake Kunsei",
+      "name_ru": "Сякэ",
+      "description": "with salmon",
+      "description_ru": "c лососем",
+      "weight": "50",
+      "prise": "75",
+      "mark": "Hit",
+      "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AABrfoBIcZaYJkVMCil5IFxea/Sushi_Syake_Kunsei.jpg"
+    }
+    ,{
+      "id": "7",
+      "name": "Unagi",
+      "name_ru": "Унаги",
+      "description": "with smoked eel",
+      "description_ru": "c копчёным угрём",
+      "weight": "65",
+      "prise": "110",
+      "mark": "",
+      "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AACLrIQ-tG8llBp_mZP_MQq3a/Sushi_Unagi.jpg"
+    }
+    ,{
+      "id": "8",
+      "name": "Maguro",
+      "name_ru": "Магуро",
+      "description": "with tuna",
+      "description_ru": "c тунцом",
+      "weight": "50",
+      "prise": "95",
+      "mark": "",
+      "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AAAzpQOemC00nsZ56Litoj41a/Sushi_Maguro.jpg"
+    }
+    ,{
+      "id": "9",
+      "name": "Ebi",
+      "name_ru": "Эби",
+      "description": "with shrimp",
+      "description_ru": "c креветкой",
+      "weight": "55",
+      "prise": "85",
+      "mark": "Hit",
+      "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AADsY65fMMUT-SGLZ2oQR8nza/Sushi_Ebi.jpg"
+    }
+    ,{
+      "id": "10",
+      "name": "Abokado",
+      "name_ru": "Абокадо",
+      "description": "with avocado",
+      "description_ru": "с авокадо",
+      "weight": "60",
+      "prise": "55",
+      "mark": "Veg",
+      "photo": "https://dl.dropboxusercontent.com/sh/w7k28fp2vonqwxy/AADJguPDW9ShMmNPKEB8TLWYa/Sushi_abokado.jpg"
+    }
+  ]
+}

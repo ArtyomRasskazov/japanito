@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Roll",
+    "name_ru": "Ролл",
+    "icon": "https://dl.dropboxusercontent.com/sh/bz8voekzpzkgdin/AAC962tcijTbisvhNYc18u4ma/001-fish.png"
+  }
+  ,{
+    "name": "Sushi",
+    "name_ru": "Суши",
+    "icon": "https://dl.dropboxusercontent.com/sh/bz8voekzpzkgdin/AAB9tTJzrExqNwl4qqnCBjJAa/002-sushi.png"
+  }
+  ,{
+    "name": "Set",
+    "name_ru": "Сеты",
+    "icon": "https://dl.dropboxusercontent.com/sh/bz8voekzpzkgdin/AABqECvxclFeH8P-IGOIGO2Ba/003-sushi-1.png"
+  }
+  ,{
+    "name": "Noodles",
+    "name_ru": "Лапша",
+    "icon": "https://dl.dropboxusercontent.com/sh/bz8voekzpzkgdin/AAA52fWJxoyoOvh_MDsOy2O-a/004-noodles.png"
+  }
+  ,{
+    "name": "Soup",
+    "name_ru": "Супы",
+    "icon": "https://dl.dropboxusercontent.com/sh/bz8voekzpzkgdin/AABEN12d-JF_pwx2brVmprnea/005-soup.png"
+  }
+]
