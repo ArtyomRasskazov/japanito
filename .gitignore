@@ -21,10 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# technical task
-/test_developer/test.psd
-/test_developer/test1024px.pdf
-/test_developer/testArtboard 1.pdf
-/test_developer/testArtboard 2.pdf
-test_developer.pdf

@@ -1,18 +1,3 @@
-import React from 'react';
-import ProductCard from './app/ProductCard'
-import Header from './app/Header'
-import Navigation from './app/Navigation'
-import Footer from './app/Footer'
-import productDataBase from './data/products.json'
-import productCategories from './data/categories.json'
-
-import 'font-awesome/css/font-awesome.min.css'
-
-import sushi_main from './data/sushi_main.png'
-
-// TODO: Delete unused files, build production and merge to master
-// FIXME: Problems when zooming
-
 // IDEA: Restructuring (new brunch)
 // - [ ] Create database for all texts including phone number and copyright
 // - [ ] Try make state.locale with function once before rendering
@@ -23,6 +8,18 @@ import sushi_main from './data/sushi_main.png'
 // - [ ] Use font-awesome 5
 // - [ ] Make documentation (use JSDoc)
 // - [ ] Try color *.svg when it background
+
+import React from 'react';
+import ProductCard from './app/ProductCard'
+import Header from './app/Header'
+import Navigation from './app/Navigation'
+import Footer from './app/Footer'
+import productDataBase from './data/products.json'
+import productCategories from './data/categories.json'
+import 'font-awesome/css/font-awesome.min.css'
+import sushi_main from './data/sushi_main.png'
+
+// FIXME: Problems when zooming
 
 let space = (document.documentElement.clientWidth-1024) / 2;
 let root = document.querySelector(':root');
@@ -338,7 +335,6 @@ class App extends React.Component {
       </div>
     )
   }
-
 
   render() {
     return (
