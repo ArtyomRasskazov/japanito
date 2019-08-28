@@ -32,7 +32,7 @@ code {
     monospace;
 }
 
-h1 {
+h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -42,7 +42,7 @@ h1 {
   align-items: center;
 }
 
-h2 {
+h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,12 +73,20 @@ input[type="button"].red:active {
   background: var(--red-active);
 }
 
-h2 button { /* for close / filter */
+h1 button { /* for close / filter */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: inherit;
   border: none;
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
   padding: 0px;
+}
+
+h1 button * {
+  margin-right: .65rem;
 }
 
 ul {
@@ -139,7 +147,7 @@ ul.ListOfCategories li:hover {
   height: 130px;
   background-color: var(--red);
   background-position-y: 30%;
-  transition: all 0s;
+  transition: background-color 0s;
 }
 
 ul.ListOfCategories li:active {
@@ -150,7 +158,7 @@ ul.ListOfCategories a {
   text-decoration: none;
 }
 
-ul.ListOfCategories li h2 {
+ul.ListOfCategories li h1 {
   color: transparent;
   height: 92%;
   display: flex;
@@ -159,7 +167,7 @@ ul.ListOfCategories li h2 {
   transition: all .2s ease-in;
 }
 
-ul.ListOfCategories li:hover h2{
+ul.ListOfCategories li:hover h1{
   color: white;
 }
 
@@ -311,6 +319,7 @@ form.counter {
 button.clearButton {
   grid-area: clearButton;
   display: none;
+  visibility: hidden;
   border: none;
   border-radius: 50%;
   font-size: 16px;
@@ -324,6 +333,10 @@ button.clearButton {
 
 .OrderList button.clearButton {
   display: flex;
+}
+
+.OrderList .ProductCard:hover button.clearButton {
+  visibility: visible;
 }
 
 .red {
@@ -350,10 +363,14 @@ div.Order {
   padding: 47px 30px 57px;
 }
 
-div.Order h1 {
+div.Order h2 {
   padding: 47px 0px 45px;
   box-shadow: 0px -2px 2px rgba(0, 0, 0, .2);
   outline: white solid 2px; /* hides shadow a sides and bottom */
+}
+
+div.Order .checkoutButton {
+  align-self: center;
 }
 
 div.Banner {
@@ -369,7 +386,7 @@ div.Banner p {
   font-size: 36px;
   font-weight: 700;
   margin: 35px 0px;
-  width: 60%;
+  width: 55%;
 }
 
 div.Banner span {
@@ -423,8 +440,6 @@ nav.Navigation > ul a:active {
   color: var(--red-active);
   text-decoration: none;
 }
-
-/* IDEA: Rewrite Footer by Grid */
 
 div.Footer {
   display: flex;

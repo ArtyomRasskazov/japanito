@@ -1,17 +1,3 @@
-/* Stylize the ProductCard implementation for order list #3
-* DONE: compose ProductCard when it in Order
-* DONE: make the weight and the mark is hidden
-* DONE: make prise is calculate
-* DONE: add 'clear' button
-* DONE: insert "Total discounted"
-* DONE: add button "Checkout"
-* DONE: add button for closing (may be in H2)
-* DONE: add paddings
-* DONE: showing onClick the button Card
-* IDEA: Remake h2 to h1 and ProductName is h2 in Decscription
-* IDEA: clearButton visible only ProductCard:hover
-*/
-
 import React from 'react'
 import 'font-awesome/css/font-awesome.min.css'
 
@@ -83,6 +69,7 @@ class ProductCard extends React.Component {
           {this.props.cost || this.props.productData.prise}
           &nbsp;<i className="fa fa-rub" />
         </div>
+
         {this.makeCounter()}
         {this.makeClearButton()}
       </div>
