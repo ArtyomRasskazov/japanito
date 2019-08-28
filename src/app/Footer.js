@@ -7,18 +7,22 @@ import FooterMenu from './FooterMenu'
 import Search from './Search'
 import AppDownload from './AppDownload'
 
-function Footer() {
+function Footer(props) {
+  let sendTheComment = (props.lang === 'ru') ?
+                        'Отправить отзыв' :
+                        'Send the comment' ;
+                        
   return (
     <div className="Footer">
       <Logo />
       <PhoneNumber />
       <FollowUs />
-      <CopyRight />
+      <CopyRight lang={props.lang}/>
 
-      <FooterMenu />
+      <FooterMenu lang={props.lang}/>
 
-      <Search />
-      <input type="button" className="red" value="Отправить отзыв" />
+      <Search lang={props.lang}/>
+      <input type="button" className="red" value={sendTheComment} />
       <AppDownload />
     </div>
   )

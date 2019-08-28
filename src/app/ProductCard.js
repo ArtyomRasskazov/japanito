@@ -74,10 +74,10 @@ class ProductCard extends React.Component {
 
     return (
       <div className="ProductCard">
-        <div className="weight"> {this.props.productData.weight} g. </div>
+        <div className="weight"> {this.props.productData.weight} {this.props.g} </div>
         <div className="mark white" style={marker}> {this.props.productData.mark} </div>
-        <div className="name" style={photo}> {this.props.productData.name} </div>
-        <div className="description"> {this.props.productData.description} </div>
+        <div className="name" style={photo}> {this.props.productData[this.props.name]} </div>
+        <div className="description"> {this.props.productData[this.props.description]} </div>
         <div className="prise red">
           {/* .cost is passed only for OrderList, then for catalog rendering just prise*/}
           {this.props.cost || this.props.productData.prise}

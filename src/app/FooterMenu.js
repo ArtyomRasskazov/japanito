@@ -1,18 +1,56 @@
 import React from 'react'
 
-function FooterMenu() {
+function FooterMenu(props) {
+  let restaurants,
+      stocks,
+      news,
+      delivery,
+      rent,
+      franchise,
+      vacancies,
+      offer,
+      cooperation,
+      contacts;
+
+  switch (props.lang) {
+    case 'ru':
+      restaurants = 'Рестораны';
+      stocks = 'Акции';
+      news = 'Новости';
+      delivery = 'Доставка';
+      rent = 'Аренда';
+      franchise = 'Франшиза';
+      vacancies = 'Вакансии';
+      offer = 'Оферта';
+      cooperation = 'Сотрудничество';
+      contacts = 'Контакты';
+      break;
+
+    default:
+      restaurants = 'Restaurants';
+      stocks = 'Stocks';
+      news = 'News';
+      delivery = 'Delivery';
+      rent = 'Rent';
+      franchise = 'Franchise';
+      vacancies = 'Vacancies';
+      offer = 'Offer';
+      cooperation = 'Cooperation';
+      contacts = 'Contacts';
+  }
+
   return (
     <ul className="FooterMenu">
-      <li>Рестораны</li>
-      <li>Акции</li>
-      <li>Новости</li>
-      <li>Доставка</li>
-      <li>Аренда</li>
-      <li>Франшиза</li>
-      <li>Вакансии</li>
-      <li>Оферта</li>
-      <li>Сотрудничество</li>
-      <li>Контакты</li>
+      <li>{restaurants}</li>
+      <li>{stocks}</li>
+      <li>{news}</li>
+      <li>{delivery}</li>
+      <li>{rent}</li>
+      <li>{franchise}а</li>
+      <li>{vacancies}</li>
+      <li>{offer}</li>
+      <li>{cooperation}</li>
+      <li>{contacts}</li>
     </ul>
   )
 }

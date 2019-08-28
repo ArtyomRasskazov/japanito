@@ -18,10 +18,10 @@ function Header (props) {
   }
 
   function  makeList(cities) {
-    let makeOption = cities.map( city => {
+    let makeOption = Object.keys(cities).map( cityID => {
       return (
-        <option>
-          {city}
+        <option key={cityID} value={cityID}>
+          {cities[cityID]}
         </option>
       )
     })

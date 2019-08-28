@@ -1,10 +1,14 @@
 import React from 'react'
 import 'font-awesome/css/font-awesome.min.css'
 
-function Search() {
+function Search(props) {
+  let siteSearch = (props.lang === 'ru') ?
+                        'Отправить отзыв' :
+                        'Site search' ;
+
   return (
     <form className="Search">
-      <input type="text" placeholder="Поиск по сайту" />
+      <input type="text" placeholder={siteSearch} />
       <button type="submit" className="red">
         <i className="fa fa-search white" />
       </button>

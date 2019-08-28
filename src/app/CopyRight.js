@@ -1,9 +1,13 @@
 import React from 'react'
 
-function CopyRight() {
+function CopyRight(props) {
+  let organization = (props.lang === 'ru') ?
+                      'Ресторан японской кухни «Japanito»' :
+                      'Japanese Restaurant «Japanito»' ;
+
   return (
     <div className="CopyRight">
-      &copy; 2019 Ресторан японской кухни «Japanito»
+      &copy; 2019 {organization}
     </div>
   )
 }
