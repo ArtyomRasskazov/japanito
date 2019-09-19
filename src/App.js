@@ -4,12 +4,12 @@
 // - [ ] Rewrite Footer using a grid
 // - [ ] Make something like <div><h2>name</h2>description</div> in ProductCard
 // - [ ] Split into smaller components
-// - [ ] Remake css following the "Styling in react"
 // - [ ] Use font-awesome 5
 // - [ ] Make documentation (use JSDoc)
 // - [ ] Try color *.svg when it background
 // - [ ] rename make... funktions to create...
 // - [ ] check function do one function
+// TODO: Remake css following the "Styling in react"
 
 import React from 'react';
 import ProductCard from './app/ProductCard'
