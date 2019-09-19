@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/japanito/static/css/main.184fcd33.chunk.css",
+    "main.js": "/japanito/static/js/main.bdde2221.chunk.js",
+    "main.js.map": "/japanito/static/js/main.bdde2221.chunk.js.map",
+    "runtime~main.js": "/japanito/static/js/runtime~main.c988e366.js",
+    "runtime~main.js.map": "/japanito/static/js/runtime~main.c988e366.js.map",
+    "static/css/2.6966acc9.chunk.css": "/japanito/static/css/2.6966acc9.chunk.css",
+    "static/js/2.96fd65c7.chunk.js": "/japanito/static/js/2.96fd65c7.chunk.js",
+    "static/js/2.96fd65c7.chunk.js.map": "/japanito/static/js/2.96fd65c7.chunk.js.map",
+    "index.html": "/japanito/index.html",
+    "precache-manifest.f3a2982cf21fa4e278fc34eeef0bf237.js": "/japanito/precache-manifest.f3a2982cf21fa4e278fc34eeef0bf237.js",
+    "service-worker.js": "/japanito/service-worker.js",
+    "static/css/2.6966acc9.chunk.css.map": "/japanito/static/css/2.6966acc9.chunk.css.map",
+    "static/css/main.184fcd33.chunk.css.map": "/japanito/static/css/main.184fcd33.chunk.css.map",
+    "static/media/appStoreBadge.svg": "/japanito/static/media/appStoreBadge.2928664f.svg",
+    "static/media/caret-down-solid.svg": "/japanito/static/media/caret-down-solid.397d03b8.svg",
+    "static/media/font-awesome.min.css": "/japanito/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/googlePlayBadge.png": "/japanito/static/media/googlePlayBadge.f41b9fae.png",
+    "static/media/index.css": "/japanito/static/media/pille-riin.ce4e89a0.jpg",
+    "static/media/sushi_main.png": "/japanito/static/media/sushi_main.4f86a5b2.png"
+  }
+}
