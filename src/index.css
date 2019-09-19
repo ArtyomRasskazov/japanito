@@ -147,11 +147,11 @@ ul.ListOfCategories li:hover {
   height: 130px;
   background-color: var(--red);
   background-position-y: 30%;
-  transition: background-color 0s;
 }
 
 ul.ListOfCategories li:active {
   background-color: var(--red-active);
+  transition: background-color 0s;
 }
 
 ul.ListOfCategories a {

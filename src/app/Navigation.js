@@ -5,7 +5,7 @@ function Navigation(props) {
   let main, menu, news, stocks, restaurants, deliveryGeography;
 
   switch (props.lang) {
-    case 'ru':
+    case 'RU':
       main = 'Главная';
       menu = 'Меню';
       news = 'Новости';

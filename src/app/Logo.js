@@ -1,3 +1,7 @@
+/**
+  * Function retrns a logo component
+  */
+
 import React from 'react'
 import logo from '../data/logo.png'
 

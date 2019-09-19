@@ -14,6 +14,7 @@ const styles = {
 function Header (props) {
   let cost = props.totalCost;
   if (cost >= 1000) {
+// FIXME: when cost = 1023 it displays "1 23" becouse cost%1000 = 23  
       cost = (cost - cost%1000) / 1000 + '\xa0' + cost%1000;
   }
 

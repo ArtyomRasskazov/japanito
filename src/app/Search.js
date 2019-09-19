@@ -1,3 +1,7 @@
+/**
+  * Function retrns a custom search field
+  */
+
 import React from 'react'
 import 'font-awesome/css/font-awesome.min.css'
 
